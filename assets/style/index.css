@@ -24,7 +24,7 @@
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     font-family: "Chivo", serif;
     display: flex;
@@ -71,10 +71,22 @@ a {
     border-radius: 28px;
     color: var(--blue-950);
     transition: background-color .5s ease-in-out;
+    border: none;
+    cursor: pointer;
 }
 
 .button:hover{
     background-color: #54e6ae80;
+}
+
+/* Input */
+.input-email {
+    width: 100%;
+    padding: 8px 28px;
+    border-radius: 999px;
+    border: none;
+    background-color: var(--blue-900);
+    color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
@@ -182,8 +194,20 @@ main p {
 }
 
 main .logos {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
+    gap: 2%;
     width: 100%;
+    margin: 40px 0;
+}
+
+/* Form */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
