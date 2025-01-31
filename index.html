@@ -42,9 +42,10 @@
         <img src="assets/image/desktop/pocket-casts.svg" alt="">
       </div>
 
-      <form action="">
-        <input type="email" name="email" id="email" class="input-email text-present-3-bold" placeholder="Email address">
+      <form action="" id="form">
+        <input type="text" name="email" id="email" class="input-email text-present-3-bold" autocomplete="off" placeholder="Email address">
         <input type="submit" value="Request access" class="button button-green text-present-3-bold">
+        <span class="errorMessage" id="errorMessage">Mensagem de error</span>
       </form>
     </main>
   </div>

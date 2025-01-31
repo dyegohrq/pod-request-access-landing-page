@@ -31,6 +31,19 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--blue-950);
+    overflow-x: hidden;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        align-items: flex-start;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        align-items: center;
+    }
 }
 
 a {
@@ -129,6 +142,7 @@ header {
     .container{
         background: none;
         flex-direction: row;
+        max-height: 868px;
     }
 
     .container .bg-host {
@@ -145,6 +159,15 @@ header {
     }
 }
 
+@media screen and (min-width: 768px) {
+    .container .bg-dots {
+        display: block;
+        position: absolute;
+        bottom: -55px;
+        right: -128px;
+    }
+}
+
 @media screen and (min-width: 1200px) {
     .container {
         max-height: 654px;
@@ -156,8 +179,6 @@ header {
     }
 
     .container .bg-dots {
-        display: block;
-        position: absolute;
         bottom: -55px;
         right: 0;
     }
@@ -174,6 +195,7 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
+    max-width: 600px;
     text-align: center;
     margin: 56px 0 36px 0;
     z-index: 999;
@@ -210,4 +232,81 @@ form {
     align-items: center;
     justify-content: center;
     gap: 8px;
+}
+
+form .errorMessage {
+    color: var(--red);
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: none;
+}
+
+.invalid .input-email {
+    border: 2px solid var(--red);
+}
+
+.invalid .errorMessage{
+    display: block;
+}
+
+.valid .input-email {
+    border: 2px solid var(--green);
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        position: absolute;
+        background-color: var(--blue-950);
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 88px 0 0 20px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    main .logos {
+        order: 3;
+    }
+
+    main h1, main p, main form {
+        max-width: 450px;
+    }
+
+    form {
+        position: relative;
+        align-items: flex-start;
+        margin-top: 40px;
+    }
+
+    form .button {
+        position: absolute;
+        right: 0;
+    }
+
+    .invalid .errorMessage {
+        margin-left: 32px;
+    }
+
+    .invalid .button {
+        top: 2px;
+        right: 3px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 736px;
+        padding: 88px 64px 0 20px;
+    }
+
+    main h1 {
+        max-width: 100%;
+    }
+
+    main p, main form, main .logo {
+        max-width: 448px;
+    }
+
 }
